@@ -1,0 +1,24 @@
+# Use Python 3.13 slim image as base
+FROM python:3.13-slim
+
+# Set working directory
+WORKDIR /app
+
+# Install uv
+RUN pip install uv
+
+# Copy pyproject.toml and uv.lock
+COPY pyproject.toml uv.lock ./
+
+# Install dependencies using uv
+RUN uv sync --frozen
+
+# Copy application files
+COPY app.py predict.py train.py ./
+COPY loan_approval.csv Random_Forest_Model.bin ./
+
+# Expose port 8000
+EXPOSE 8000
+
+# Run the FastAPI app with uvicorn
+CMD ["uv", "run", "uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
