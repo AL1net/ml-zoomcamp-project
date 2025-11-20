@@ -68,7 +68,7 @@ docker-compose.override.yml
 *.log
 
 # Model files (do not commit large binaries)
-Random_Forest_Model.bin
+# Random_Forest_Model.bin  <-- removed to allow committing the trained model
 
 # OS files
 .DS_Store
