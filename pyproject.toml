@@ -1,0 +1,16 @@
+[project]
+name = "loan-approval"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.121.2",
+    "scikit-learn==1.7.2",
+    "uvicorn>=0.38.0",
+    "xgboost>=2.0.0",
+    "pandas>=2.0.0",
+    "numpy>=1.24.0",
+    "matplotlib>=3.8.0",
+    "seaborn>=0.13.0",
+]
